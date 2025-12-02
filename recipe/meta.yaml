@@ -10,11 +10,16 @@ source:
 
 build:
   number: 0
-  noarch: generic
+  # This is 'technically' not a noarch package: only supported on linux-64 and linux-aarch64
+  # Therefore, 'noarch: generic' is replaced with 'skip: true' to avoid building on unsupported platforms.
+  skip: true  # [not linux]
+
 
 requirements:
   run:
-    - __linux
+    # Remove '__linux' as it might not be handled properly on PBP
+    # Also, see above note about 'skip: true'
+    # Ref: https://docs.conda.io/projects/conda/en/stable/user-guide/tasks/manage-virtual.html
     - libcufile 1.15.1.6
     - libcufile-dev 1.15.1.6
     - libcufile-static 1.15.1.6
@@ -33,8 +38,10 @@ about:
   description: |
     Meta-package containing all the available packages required for libcufile.
   doc_url: https://docs.nvidia.com/cuda/index.html
+  dev_url: https://docs.nvidia.com/cuda/index.html
 
 extra:
+  skip-lints:
+    - license_file_overspecified
   recipe-maintainers:
     - conda-forge/cuda
-
