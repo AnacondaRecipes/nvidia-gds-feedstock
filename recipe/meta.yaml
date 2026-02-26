@@ -9,11 +9,10 @@ source:
   sha256: e2c71babfd18a8e69542dd7e9ca018f9caa438094001a58e6bc4d8c999bf0d07
 
 build:
-  number: 0
+  number: 1
   # This is 'technically' not a noarch package: only supported on linux-64 and linux-aarch64
   # Therefore, 'noarch: generic' is replaced with 'skip: true' to avoid building on unsupported platforms.
   skip: true  # [not linux]
-
 
 requirements:
   run:
@@ -23,6 +22,8 @@ requirements:
     - libcufile 1.16.1.26
     - libcufile-dev 1.16.1.26
     - libcufile-static 1.16.1.26
+    - libcuobjclient 1.0.0.26
+    - libcuobjclient-dev 1.0.0.26
     - gds-tools 1.16.1.26
 
 test:
