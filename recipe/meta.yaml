@@ -1,4 +1,4 @@
-{% set version = "12.8.1" %}
+{% set version = "12.9.1" %}
 
 package:
   name: nvidia-gds
@@ -19,10 +19,10 @@ requirements:
     # Remove '__linux' as it might not be handled properly on PBP
     # Also, see above note about 'skip: true'
     # Ref: https://docs.conda.io/projects/conda/en/stable/user-guide/tasks/manage-virtual.html
-    - libcufile 1.13.1.3
-    - libcufile-dev 1.13.1.3
-    - libcufile-static 1.13.1.3
-    - gds-tools 1.13.1.3
+    - libcufile 1.14.1.1
+    - libcufile-dev 1.14.1.1
+    - libcufile-static 1.14.1.1
+    - gds-tools 1.14.1.1
 
 test:
   commands:
