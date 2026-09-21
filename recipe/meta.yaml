@@ -1,4 +1,4 @@
-{% set version = "13.3.1" %}
+{% set version = "13.4.1" %}
 
 package:
   name: nvidia-gds
@@ -19,12 +19,12 @@ requirements:
     # Remove '__linux' as it might not be handled properly on PBP
     # Also, see above note about 'skip: true'
     # Ref: https://docs.conda.io/projects/conda/en/stable/user-guide/tasks/manage-virtual.html
-    - libcufile 1.18.1.6
-    - libcufile-dev 1.18.1.6
-    - libcufile-static 1.18.1.6
-    - libcuobjclient 1.2.0.68
-    - libcuobjclient-dev 1.2.0.68
-    - gds-tools 1.18.1.6
+    - libcufile 1.19.0.109
+    - libcufile-dev 1.19.0.109
+    - libcufile-static 1.19.0.109
+    - libcuobjclient 1.3.0.109
+    - libcuobjclient-dev 1.3.0.109
+    - gds-tools 1.19.0.109
 
 test:
   commands:
@@ -43,5 +43,7 @@ about:
   dev_url: https://docs.nvidia.com/cuda/index.html
 
 extra:
+  skip-lints:
+    - deprecate_license_url
   recipe-maintainers:
     - conda-forge/cuda
